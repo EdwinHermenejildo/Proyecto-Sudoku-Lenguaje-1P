@@ -2,12 +2,15 @@
 <ui version="4.0">
  <class>Sudoku</class>
  <widget class="QMainWindow" name="Sudoku">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>655</width>
-    <height>658</height>
+    <width>645</width>
+    <height>467</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,291 +20,42 @@
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>-20</y>
-      <width>731</width>
-      <height>695</height>
+      <x>10</x>
+      <y>10</y>
+      <width>611</width>
+      <height>291</height>
      </rect>
     </property>
-    <layout class="QGridLayout" name="gridLayout_10">
+    <layout class="QGridLayout" name="gLTablero">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
      <item row="0" column="0">
-      <layout class="QGridLayout" name="gridLayout_11">
-       <item row="1" column="1">
-        <widget class="QTextBrowser" name="textBrowser"/>
-       </item>
-       <item row="1" column="2">
-        <widget class="QTextBrowser" name="textBrowser_2"/>
-       </item>
-       <item row="2" column="1">
-        <widget class="QTextBrowser" name="textBrowser_3"/>
-       </item>
-       <item row="0" column="0">
-        <widget class="QTextBrowser" name="textBrowser_8"/>
-       </item>
-       <item row="0" column="1">
-        <widget class="QTextBrowser" name="textBrowser_9"/>
-       </item>
-       <item row="0" column="2">
-        <widget class="QTextBrowser" name="textBrowser_10"/>
-       </item>
-       <item row="1" column="0">
-        <widget class="QTextBrowser" name="textBrowser_11"/>
-       </item>
-       <item row="2" column="0">
-        <widget class="QTextBrowser" name="textBrowser_12"/>
-       </item>
-       <item row="2" column="2">
-        <widget class="QTextBrowser" name="textBrowser_13"/>
-       </item>
-      </layout>
-     </item>
-     <item row="0" column="1">
-      <layout class="QGridLayout" name="gridLayout_22">
-       <item row="1" column="1">
-        <widget class="QTextBrowser" name="textBrowser_7"/>
-       </item>
-       <item row="1" column="2">
-        <widget class="QTextBrowser" name="textBrowser_20"/>
-       </item>
-       <item row="2" column="1">
-        <widget class="QTextBrowser" name="textBrowser_21"/>
-       </item>
-       <item row="0" column="0">
-        <widget class="QTextBrowser" name="textBrowser_22"/>
-       </item>
-       <item row="0" column="1">
-        <widget class="QTextBrowser" name="textBrowser_23"/>
-       </item>
-       <item row="0" column="2">
-        <widget class="QTextBrowser" name="textBrowser_24"/>
-       </item>
-       <item row="1" column="0">
-        <widget class="QTextBrowser" name="textBrowser_25"/>
-       </item>
-       <item row="2" column="0">
-        <widget class="QTextBrowser" name="textBrowser_26"/>
-       </item>
-       <item row="2" column="2">
-        <widget class="QTextBrowser" name="textBrowser_27"/>
-       </item>
-      </layout>
-     </item>
-     <item row="0" column="2">
-      <layout class="QGridLayout" name="gridLayout_13">
-       <item row="1" column="1">
-        <widget class="QTextBrowser" name="textBrowser_28"/>
-       </item>
-       <item row="1" column="2">
-        <widget class="QTextBrowser" name="textBrowser_29"/>
-       </item>
-       <item row="2" column="1">
-        <widget class="QTextBrowser" name="textBrowser_30"/>
-       </item>
-       <item row="0" column="0">
-        <widget class="QTextBrowser" name="textBrowser_31"/>
-       </item>
-       <item row="0" column="1">
-        <widget class="QTextBrowser" name="textBrowser_32"/>
-       </item>
-       <item row="0" column="2">
-        <widget class="QTextBrowser" name="textBrowser_33"/>
-       </item>
-       <item row="1" column="0">
-        <widget class="QTextBrowser" name="textBrowser_34"/>
-       </item>
-       <item row="2" column="0">
-        <widget class="QTextBrowser" name="textBrowser_35"/>
-       </item>
-       <item row="2" column="2">
-        <widget class="QTextBrowser" name="textBrowser_36"/>
-       </item>
-      </layout>
-     </item>
-     <item row="1" column="0">
-      <layout class="QGridLayout" name="gridLayout_14">
-       <item row="1" column="1">
-        <widget class="QTextBrowser" name="textBrowser_37"/>
-       </item>
-       <item row="1" column="2">
-        <widget class="QTextBrowser" name="textBrowser_38"/>
-       </item>
-       <item row="2" column="1">
-        <widget class="QTextBrowser" name="textBrowser_39"/>
-       </item>
-       <item row="0" column="0">
-        <widget class="QTextBrowser" name="textBrowser_40"/>
-       </item>
-       <item row="0" column="1">
-        <widget class="QTextBrowser" name="textBrowser_41"/>
-       </item>
-       <item row="0" column="2">
-        <widget class="QTextBrowser" name="textBrowser_42"/>
-       </item>
-       <item row="1" column="0">
-        <widget class="QTextBrowser" name="textBrowser_43"/>
-       </item>
-       <item row="2" column="0">
-        <widget class="QTextBrowser" name="textBrowser_44"/>
-       </item>
-       <item row="2" column="2">
-        <widget class="QTextBrowser" name="textBrowser_45"/>
-       </item>
-      </layout>
-     </item>
-     <item row="1" column="1">
-      <layout class="QGridLayout" name="gridLayout_16">
-       <item row="1" column="1">
-        <widget class="QTextBrowser" name="textBrowser_46"/>
-       </item>
-       <item row="1" column="2">
-        <widget class="QTextBrowser" name="textBrowser_47"/>
-       </item>
-       <item row="2" column="1">
-        <widget class="QTextBrowser" name="textBrowser_48"/>
-       </item>
-       <item row="0" column="0">
-        <widget class="QTextBrowser" name="textBrowser_49"/>
-       </item>
-       <item row="0" column="1">
-        <widget class="QTextBrowser" name="textBrowser_50"/>
-       </item>
-       <item row="0" column="2">
-        <widget class="QTextBrowser" name="textBrowser_51"/>
-       </item>
-       <item row="1" column="0">
-        <widget class="QTextBrowser" name="textBrowser_52"/>
-       </item>
-       <item row="2" column="0">
-        <widget class="QTextBrowser" name="textBrowser_53"/>
-       </item>
-       <item row="2" column="2">
-        <widget class="QTextBrowser" name="textBrowser_54"/>
-       </item>
-      </layout>
+      <layout class="QGridLayout" name="gL_1"/>
      </item>
      <item row="1" column="2">
-      <layout class="QGridLayout" name="gridLayout_23">
-       <item row="1" column="1">
-        <widget class="QTextBrowser" name="textBrowser_64"/>
-       </item>
-       <item row="1" column="2">
-        <widget class="QTextBrowser" name="textBrowser_65"/>
-       </item>
-       <item row="2" column="1">
-        <widget class="QTextBrowser" name="textBrowser_66"/>
-       </item>
-       <item row="0" column="0">
-        <widget class="QTextBrowser" name="textBrowser_67"/>
-       </item>
-       <item row="0" column="1">
-        <widget class="QTextBrowser" name="textBrowser_68"/>
-       </item>
-       <item row="0" column="2">
-        <widget class="QTextBrowser" name="textBrowser_69"/>
-       </item>
-       <item row="1" column="0">
-        <widget class="QTextBrowser" name="textBrowser_70"/>
-       </item>
-       <item row="2" column="0">
-        <widget class="QTextBrowser" name="textBrowser_71"/>
-       </item>
-       <item row="2" column="2">
-        <widget class="QTextBrowser" name="textBrowser_72"/>
-       </item>
-      </layout>
+      <layout class="QGridLayout" name="gL_6"/>
+     </item>
+     <item row="0" column="1">
+      <layout class="QGridLayout" name="gL_2"/>
+     </item>
+     <item row="0" column="2">
+      <layout class="QGridLayout" name="gL_3"/>
+     </item>
+     <item row="1" column="0">
+      <layout class="QGridLayout" name="gL_4"/>
+     </item>
+     <item row="1" column="1">
+      <layout class="QGridLayout" name="gL_5"/>
      </item>
      <item row="2" column="0">
-      <layout class="QGridLayout" name="gridLayout_25">
-       <item row="1" column="1">
-        <widget class="QTextBrowser" name="textBrowser_82"/>
-       </item>
-       <item row="1" column="2">
-        <widget class="QTextBrowser" name="textBrowser_83"/>
-       </item>
-       <item row="2" column="1">
-        <widget class="QTextBrowser" name="textBrowser_84"/>
-       </item>
-       <item row="0" column="0">
-        <widget class="QTextBrowser" name="textBrowser_85"/>
-       </item>
-       <item row="0" column="1">
-        <widget class="QTextBrowser" name="textBrowser_86"/>
-       </item>
-       <item row="0" column="2">
-        <widget class="QTextBrowser" name="textBrowser_87"/>
-       </item>
-       <item row="1" column="0">
-        <widget class="QTextBrowser" name="textBrowser_88"/>
-       </item>
-       <item row="2" column="0">
-        <widget class="QTextBrowser" name="textBrowser_89"/>
-       </item>
-       <item row="2" column="2">
-        <widget class="QTextBrowser" name="textBrowser_90"/>
-       </item>
-      </layout>
+      <layout class="QGridLayout" name="gL_7"/>
      </item>
      <item row="2" column="1">
-      <layout class="QGridLayout" name="gridLayout_20">
-       <item row="1" column="1">
-        <widget class="QTextBrowser" name="textBrowser_91"/>
-       </item>
-       <item row="1" column="2">
-        <widget class="QTextBrowser" name="textBrowser_92"/>
-       </item>
-       <item row="2" column="1">
-        <widget class="QTextBrowser" name="textBrowser_93"/>
-       </item>
-       <item row="0" column="0">
-        <widget class="QTextBrowser" name="textBrowser_94"/>
-       </item>
-       <item row="0" column="1">
-        <widget class="QTextBrowser" name="textBrowser_95"/>
-       </item>
-       <item row="0" column="2">
-        <widget class="QTextBrowser" name="textBrowser_96"/>
-       </item>
-       <item row="1" column="0">
-        <widget class="QTextBrowser" name="textBrowser_97"/>
-       </item>
-       <item row="2" column="0">
-        <widget class="QTextBrowser" name="textBrowser_98"/>
-       </item>
-       <item row="2" column="2">
-        <widget class="QTextBrowser" name="textBrowser_99"/>
-       </item>
-      </layout>
+      <layout class="QGridLayout" name="gL_8"/>
      </item>
      <item row="2" column="2">
-      <layout class="QGridLayout" name="gridLayout_21">
-       <item row="1" column="1">
-        <widget class="QTextBrowser" name="textBrowser_100"/>
-       </item>
-       <item row="1" column="2">
-        <widget class="QTextBrowser" name="textBrowser_101"/>
-       </item>
-       <item row="2" column="1">
-        <widget class="QTextBrowser" name="textBrowser_102"/>
-       </item>
-       <item row="0" column="0">
-        <widget class="QTextBrowser" name="textBrowser_103"/>
-       </item>
-       <item row="0" column="1">
-        <widget class="QTextBrowser" name="textBrowser_104"/>
-       </item>
-       <item row="0" column="2">
-        <widget class="QTextBrowser" name="textBrowser_105"/>
-       </item>
-       <item row="1" column="0">
-        <widget class="QTextBrowser" name="textBrowser_106"/>
-       </item>
-       <item row="2" column="0">
-        <widget class="QTextBrowser" name="textBrowser_107"/>
-       </item>
-       <item row="2" column="2">
-        <widget class="QTextBrowser" name="textBrowser_108"/>
-       </item>
-      </layout>
+      <layout class="QGridLayout" name="gL_9"/>
      </item>
     </layout>
    </widget>
@@ -311,7 +65,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>655</width>
+     <width>645</width>
      <height>21</height>
     </rect>
    </property>
