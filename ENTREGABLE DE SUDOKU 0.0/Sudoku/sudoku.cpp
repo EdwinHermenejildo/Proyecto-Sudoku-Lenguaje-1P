@@ -50,7 +50,7 @@ void Sudoku::Relacionar()
     }
 }
 
-int Sudoku::Validar()
+int Sudoku::ValidarEspaciosVacios()
 {
     for(int i = 0; i < 9; i++)
     {
@@ -181,9 +181,85 @@ int Sudoku::VerificarSubCuadro()
     return 1;
 }
 
+int Sudoku:: validarX(){
+    int b=1;
+    for(int i=0;i<9;i++){
+        if(b==0){
+          return 0;
+        }
+        b=validaLinea(i);
+    }
+    return 1;
+}
+
+int Sudoku:: validaLinea(int i){
+   int fichas[9]={0};
+   int ind;
+   for(int j=0;j<9;j++){
+       ind = numeros[i][j];
+       fichas[ind-1]=1;
+   }
+   return verificaArregloIndices(fichas);
+}
+
+int Sudoku:: validarY(){
+    int b=1;
+    for(int j=0;j<9;j++){
+        if(b==0){
+          return 0;
+        }
+        b=validaColumna(j);
+    }
+    return 1;
+}
+
+int Sudoku:: validaColumna(int j){
+    int fichas[9]={0};
+    int ind;
+    for(int i=0;i<9;i++){
+        ind = numeros[i][j];
+        fichas[ind-1]=1;
+    }
+    return verificaArregloIndices(fichas);
+}
+
+int Sudoku:: verificaArregloIndices(int arreglo[9]){
+    for(int i=0; i<9;i++){
+        if(arreglo[i]!=1){
+            return 0;
+        }
+    }
+    return 1;
+}
+
+void Sudoku:: validaciones(){
+    int b=1;
+    if(!validarX()){
+       QMessageBox::critical(this,"Error","Existen numeros repetidos en las filas..!");
+       b=0;
+    }
+    if(!validarY()){
+       QMessageBox::critical(this,"Error","Existen numeros repetidos en las columnas..!");
+       b=0;
+    }
+    if(!SubCuadros()){
+       QMessageBox::critical(this,"Error","Existen numeros repetidos en las subcuadriculas..!");
+       b=0;
+    }
+    if(b==1){
+        QMessageBox::information(this,"Felicitaciones","Sudoku Correcto..!");
+    }
+}
+
 void Sudoku::on_pB_Verificar_clicked()
 {
-    Relacionar();
-    SubCuadros();
-    qDebug() << VerificarSubCuadro();
+    if(ValidarEspaciosVacios()){
+        Relacionar();
+        validaciones();
+    }else{
+        QMessageBox::warning(this,"Error","Existen Cuadros vacíos, por favor complete los que hacen falta...");
+        qDebug() << "Llene los espacios faltantes";
+    }
+
+
 }
