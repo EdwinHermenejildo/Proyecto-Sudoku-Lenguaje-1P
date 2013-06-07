@@ -19,7 +19,8 @@ public:
     ~Sudoku();
     void Relacionar();
     int Validar();
-    
+    void SubCuadros();
+
 private slots:
     void on_pB_Verificar_clicked();
 
@@ -28,6 +29,7 @@ private:
     Ui::Sudoku *ui;
     QTextEdit *cajas[9][9];
     int numeros[9][9];
+    int subnumeros[3][3];
 };
 
 

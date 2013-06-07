@@ -4,6 +4,7 @@
 #include <QGridLayout>
 #include <QApplication>
 #include <QPushButton>
+#include <QMessageBox>
 #include <QDebug>
 
 Sudoku::Sudoku(QWidget *parent) :
@@ -25,7 +26,6 @@ Sudoku::~Sudoku()
         }
     }
 }
-
 
 void Sudoku::initGui()
 {
@@ -58,12 +58,92 @@ int Sudoku::Validar()
         {
             if(cajas[i][j]->toPlainText().isEmpty())
             {
-                return 1;
+                return 0;
             }
         }
     }
-    return 0;
+    return 1;
 }
 
-void Sudoku::on_pB_Verificar_clicked(){
+void Sudoku::SubCuadros()
+{
+    //Primer SubCuadro
+    for(int i = 0; i < 3; i++)
+    {
+        for(int j = 0; j < 3; j++)
+        {
+            subnumeros[i][j]=numeros[i][j];
+        }
+    }
+    //Segundo SubCuadro
+    for(int i = 0; i < 3; i++)
+    {
+        for(int j = 3; j < 6; j++)
+        {
+            subnumeros[i][j-3]=numeros[i][j];
+        }
+    }
+    //Tercer SubCuadro
+    for(int i = 0; i < 3; i++)
+    {
+        for(int j = 6; j < 9; j++)
+        {
+            subnumeros[i][j-6]=numeros[i][j];
+        }
+    }
+    //Cuarto SubCuadro
+    for(int i = 3; i < 6; i++)
+    {
+        for(int j = 0; j < 3; j++)
+        {
+            subnumeros[i-3][j]=numeros[i][j];
+        }
+    }
+    //Quinta SubCuadro
+    for(int i = 3; i < 6; i++)
+    {
+        for(int j = 3; j < 6; j++)
+        {
+            subnumeros[i-3][j-3]=numeros[i][j];
+        }
+    }
+    //Sexto SubCuadro
+    for(int i = 3; i < 6; i++)
+    {
+        for(int j = 6; j < 9; j++)
+        {
+            subnumeros[i-3][j-6]=numeros[i][j];
+        }
+    }
+    //Septimo SubCuadro
+    for(int i = 6; i < 9; i++)
+    {
+        for(int j = 0; j < 3; j++)
+        {
+            subnumeros[i-6][j]=numeros[i][j];
+        }
+    }
+    //Octavo SubCuadro
+    for(int i = 6; i < 9; i++)
+    {
+        for(int j = 3; j < 6; j++)
+        {
+            subnumeros[i-6][j-3]=numeros[i][j];
+        }
+    }
+    //Noveno SubCuadro
+    for(int i = 6; i < 9; i++)
+    {
+        for(int j = 6; j < 9; j++)
+        {
+            subnumeros[i-6][j-6]=numeros[i][j];
+        }
+    }
+}
+
+void Sudoku::on_pB_Verificar_clicked()
+{
+    Relacionar();
+    SubCuadros();
+    qDebug() << subnumeros[1][1];
 }
