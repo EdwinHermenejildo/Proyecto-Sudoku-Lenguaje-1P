@@ -19,7 +19,7 @@ public:
     ~Sudoku();
     void Relacionar();
     int Validar();
-    void SubCuadros();
+    int SubCuadros();
     int VerificarSubCuadro();
 
 private slots:

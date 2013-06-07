@@ -65,8 +65,9 @@ int Sudoku::Validar()
     return 1;
 }
 
-void Sudoku::SubCuadros()
+int Sudoku::SubCuadros()
 {
+    int contador=0;
     //Primer SubCuadro
     for(int i = 0; i < 3; i++)
     {
@@ -75,14 +76,16 @@ void Sudoku::SubCuadros()
             subnumeros[i][j]=numeros[i][j];
         }
     }
+    contador = contador + VerificarSubCuadro();
     //Segundo SubCuadro
-    /*for(int i = 0; i < 3; i++)
+    for(int i = 0; i < 3; i++)
     {
         for(int j = 3; j < 6; j++)
         {
             subnumeros[i][j-3]=numeros[i][j];
         }
     }
+    contador = contador + VerificarSubCuadro();
     //Tercer SubCuadro
     for(int i = 0; i < 3; i++)
     {
@@ -91,6 +94,7 @@ void Sudoku::SubCuadros()
             subnumeros[i][j-6]=numeros[i][j];
         }
     }
+    contador = contador + VerificarSubCuadro();
     //Cuarto SubCuadro
     for(int i = 3; i < 6; i++)
     {
@@ -99,6 +103,7 @@ void Sudoku::SubCuadros()
             subnumeros[i-3][j]=numeros[i][j];
         }
     }
+    contador = contador + VerificarSubCuadro();
     //Quinta SubCuadro
     for(int i = 3; i < 6; i++)
     {
@@ -107,6 +112,7 @@ void Sudoku::SubCuadros()
             subnumeros[i-3][j-3]=numeros[i][j];
         }
     }
+    contador = contador + VerificarSubCuadro();
     //Sexto SubCuadro
     for(int i = 3; i < 6; i++)
     {
@@ -115,6 +121,7 @@ void Sudoku::SubCuadros()
             subnumeros[i-3][j-6]=numeros[i][j];
         }
     }
+    contador = contador + VerificarSubCuadro();
     //Septimo SubCuadro
     for(int i = 6; i < 9; i++)
     {
@@ -123,6 +130,7 @@ void Sudoku::SubCuadros()
             subnumeros[i-6][j]=numeros[i][j];
         }
     }
+    contador = contador + VerificarSubCuadro();
     //Octavo SubCuadro
     for(int i = 6; i < 9; i++)
     {
@@ -131,6 +139,7 @@ void Sudoku::SubCuadros()
             subnumeros[i-6][j-3]=numeros[i][j];
         }
     }
+    contador = contador + VerificarSubCuadro();
     //Noveno SubCuadro
     for(int i = 6; i < 9; i++)
     {
@@ -138,7 +147,13 @@ void Sudoku::SubCuadros()
         {
             subnumeros[i-6][j-6]=numeros[i][j];
         }
-    }*/
+    }
+    contador = contador + VerificarSubCuadro();
+    if (contador == 9)
+    {
+        return 1;
+    }
+    return 0;
 }
 
 int Sudoku::VerificarSubCuadro()
