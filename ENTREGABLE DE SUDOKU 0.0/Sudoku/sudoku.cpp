@@ -50,5 +50,20 @@ void Sudoku::Relacionar()
     }
 }
 
+int Sudoku::Validar()
+{
+    for(int i = 0; i < 9; i++)
+    {
+        for(int j=0; j<9; j++)
+        {
+            if(cajas[i][j]->toPlainText().isEmpty())
+            {
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+
 void Sudoku::on_pB_Verificar_clicked(){
 }

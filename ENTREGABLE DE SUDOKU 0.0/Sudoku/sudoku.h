@@ -17,14 +17,11 @@ class Sudoku : public QMainWindow
 public:
     explicit Sudoku(QWidget *parent = 0);
     ~Sudoku();
+    void Relacionar();
+    int Validar();
     
-
 private slots:
     void on_pB_Verificar_clicked();
-
-public:
-    void Relacionar();
-
 
 private:
     void initGui();
