@@ -19,10 +19,18 @@ public:
     ~Sudoku();
     
 
+private slots:
+    void on_pB_Verificar_clicked();
+
+public:
+    void Relacionar();
+
+
 private:
     void initGui();
     Ui::Sudoku *ui;
-    QTextEdit *caja;
+    QTextEdit *cajas[9][9];
+    int numeros[9][9];
 };
 
 
