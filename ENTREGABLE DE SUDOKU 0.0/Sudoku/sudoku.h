@@ -20,6 +20,7 @@ public:
     void Relacionar();
     int Validar();
     void SubCuadros();
+    int VerificarSubCuadro();
 
 private slots:
     void on_pB_Verificar_clicked();

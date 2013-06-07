@@ -76,7 +76,7 @@ void Sudoku::SubCuadros()
         }
     }
     //Segundo SubCuadro
-    for(int i = 0; i < 3; i++)
+    /*for(int i = 0; i < 3; i++)
     {
         for(int j = 3; j < 6; j++)
         {
@@ -138,12 +138,37 @@ void Sudoku::SubCuadros()
         {
             subnumeros[i-6][j-6]=numeros[i][j];
         }
+    }*/
+}
+
+int Sudoku::VerificarSubCuadro()
+{
+    for(int i=0 ; i<3 ; i++)
+    {
+        for(int j=0 ; j<3 ; j++)
+        {
+            int numero = subnumeros[i][j];
+            for(int k=0 ; k<3 ; k++)
+            {
+                for(int l=0 ; l<3 ; l++)
+                {
+                    if (i != k && j != l)
+                    {
+                         if (numero == subnumeros[k][l])
+                         {
+                             return 0;
+                         }
+                    }
+                }
+            }
+        }
     }
+    return 1;
 }
 
 void Sudoku::on_pB_Verificar_clicked()
 {
     Relacionar();
     SubCuadros();
-    qDebug() << subnumeros[1][1];
+    qDebug() << VerificarSubCuadro();
 }
