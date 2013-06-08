@@ -1,8 +1,8 @@
 #include "sudoku.h"
 #include "ui_sudoku.h"
-#include <QTextEdit>
-#include <QGridLayout>
 #include <QApplication>
+#include <QGridLayout>
+#include <QTextEdit>
 #include <QPushButton>
 #include <QMessageBox>
 #include <QDebug>
@@ -18,9 +18,9 @@ Sudoku::Sudoku(QWidget *parent) :
 Sudoku::~Sudoku()
 {
     delete ui;
-    for(int i=0; i<9; i++)
+    for(int i=0 ; i<9 ; i++)
     {
-        for(int j=0; j<9; j++)
+        for(int j=0 ; j<9 ; j++)
         {
             delete cajas[i][j];
         }
@@ -29,9 +29,9 @@ Sudoku::~Sudoku()
 
 void Sudoku::initGui()
 {
-    for(int i = 0; i < 9; i++)
+    for(int i=0 ; i<9 ; i++)
     {
-        for(int j=0; j<9; j++)
+        for(int j=0 ; j<9 ; j++)
         {
             cajas[i][j] = new QTextEdit();
             ui->gLTablero->addWidget(cajas[i][j],i,j);
@@ -41,9 +41,9 @@ void Sudoku::initGui()
 
 void Sudoku::Relacionar()
 {
-    for(int i = 0; i < 9; i++)
+    for(int i=0 ; i<9 ; i++)
     {
-        for(int j=0; j<9; j++)
+        for(int j=0 ; j<9 ; j++)
         {
             numeros[i][j] = cajas[i][j]->toPlainText().toInt();
         }
@@ -52,9 +52,9 @@ void Sudoku::Relacionar()
 
 int Sudoku::ValidarEspaciosVacios()
 {
-    for(int i = 0; i < 9; i++)
+    for(int i=0 ; i<9 ; i++)
     {
-        for(int j=0; j<9; j++)
+        for(int j=0 ; j<9 ; j++)
         {
             if(cajas[i][j]->toPlainText().isEmpty())
             {
@@ -67,85 +67,85 @@ int Sudoku::ValidarEspaciosVacios()
 
 int Sudoku::SubCuadros()
 {
-    int contador=0;
+    int contador = 0;
     //Primer SubCuadro
-    for(int i = 0; i < 3; i++)
+    for(int i=0 ; i<3 ; i++)
     {
-        for(int j = 0; j < 3; j++)
+        for(int j=0 ; j<3 ; j++)
         {
-            subnumeros[i][j]=numeros[i][j];
+            subnumeros[i][j] = numeros[i][j];
         }
     }
     contador = contador + VerificarSubCuadro();
     //Segundo SubCuadro
-    for(int i = 0; i < 3; i++)
+    for(int i=0 ; i<3 ; i++)
     {
-        for(int j = 3; j < 6; j++)
+        for(int j=3 ; j<6 ; j++)
         {
-            subnumeros[i][j-3]=numeros[i][j];
+            subnumeros[i][j-3] = numeros[i][j];
         }
     }
     contador = contador + VerificarSubCuadro();
     //Tercer SubCuadro
-    for(int i = 0; i < 3; i++)
+    for(int i=0 ; i<3 ; i++)
     {
-        for(int j = 6; j < 9; j++)
+        for(int j=6 ; j<9 ; j++)
         {
-            subnumeros[i][j-6]=numeros[i][j];
+            subnumeros[i][j-6] = numeros[i][j];
         }
     }
     contador = contador + VerificarSubCuadro();
     //Cuarto SubCuadro
-    for(int i = 3; i < 6; i++)
+    for(int i=3 ; i<6 ; i++)
     {
-        for(int j = 0; j < 3; j++)
+        for(int j=0 ; j<3 ; j++)
         {
-            subnumeros[i-3][j]=numeros[i][j];
+            subnumeros[i-3][j] = numeros[i][j];
         }
     }
     contador = contador + VerificarSubCuadro();
     //Quinta SubCuadro
-    for(int i = 3; i < 6; i++)
+    for(int i=3 ; i<6 ; i++)
     {
-        for(int j = 3; j < 6; j++)
+        for(int j=3 ; j<6 ; j++)
         {
-            subnumeros[i-3][j-3]=numeros[i][j];
+            subnumeros[i-3][j-3] = numeros[i][j];
         }
     }
     contador = contador + VerificarSubCuadro();
     //Sexto SubCuadro
-    for(int i = 3; i < 6; i++)
+    for(int i=3 ; i<6 ; i++)
     {
-        for(int j = 6; j < 9; j++)
+        for(int j=6 ; j<9 ; j++)
         {
-            subnumeros[i-3][j-6]=numeros[i][j];
+            subnumeros[i-3][j-6] = numeros[i][j];
         }
     }
     contador = contador + VerificarSubCuadro();
     //Septimo SubCuadro
-    for(int i = 6; i < 9; i++)
+    for(int i=6 ; i<9 ; i++)
     {
-        for(int j = 0; j < 3; j++)
+        for(int j=0 ; j<3 ; j++)
         {
-            subnumeros[i-6][j]=numeros[i][j];
+            subnumeros[i-6][j] = numeros[i][j];
         }
     }
     contador = contador + VerificarSubCuadro();
     //Octavo SubCuadro
-    for(int i = 6; i < 9; i++)
+    for(int i=6 ; i<9 ; i++)
     {
-        for(int j = 3; j < 6; j++)
+        for(int j=3 ; j<6 ; j++)
         {
-            subnumeros[i-6][j-3]=numeros[i][j];
+            subnumeros[i-6][j-3] = numeros[i][j];
         }
     }
     contador = contador + VerificarSubCuadro();
     //Noveno SubCuadro
-    for(int i = 6; i < 9; i++)
+    for(int i=6 ; i<9 ; i++)
     {
-        for(int j = 6; j < 9; j++)
+        for(int j=6 ; j<9 ; j++)
         {
-            subnumeros[i-6][j-6]=numeros[i][j];
+            subnumeros[i-6][j-6] = numeros[i][j];
         }
     }
     contador = contador + VerificarSubCuadro();
@@ -167,7 +167,7 @@ int Sudoku::VerificarSubCuadro()
             {
                 for(int l=0 ; l<3 ; l++)
                 {
-                    if (i != k && j != l)
+                    if (i!=k || j!=l)
                     {
                          if (numero == subnumeros[k][l])
                          {
@@ -181,85 +181,103 @@ int Sudoku::VerificarSubCuadro()
     return 1;
 }
 
-int Sudoku:: validarX(){
-    int b=1;
-    for(int i=0;i<9;i++){
-        if(b==0){
+int Sudoku::validarX()
+{
+    int b = 1;
+    for(int i=0 ; i<9 ; i++)
+    {
+        if(b==0)
+        {
           return 0;
         }
-        b=validaLinea(i);
+        b = validaLinea(i);
     }
     return 1;
 }
 
-int Sudoku:: validaLinea(int i){
-   int fichas[9]={0};
+int Sudoku:: validaLinea(int i)
+{
+   int fichas[9] = {0};
    int ind;
-   for(int j=0;j<9;j++){
+   for(int j=0 ; j<9 ; j++)
+   {
        ind = numeros[i][j];
-       fichas[ind-1]=1;
+       fichas[ind-1] = 1;
    }
    return verificaArregloIndices(fichas);
 }
 
-int Sudoku:: validarY(){
-    int b=1;
-    for(int j=0;j<9;j++){
-        if(b==0){
+int Sudoku::validarY()
+{
+    int b = 1;
+    for(int j=0 ; j<9 ; j++)
+    {
+        if(b==0)
+        {
           return 0;
         }
-        b=validaColumna(j);
+        b = validaColumna(j);
     }
     return 1;
 }
 
-int Sudoku:: validaColumna(int j){
-    int fichas[9]={0};
+int Sudoku::validaColumna(int j)
+{
+    int fichas[9] = {0};
     int ind;
-    for(int i=0;i<9;i++){
+    for(int i=0 ; i<9 ; i++)
+    {
         ind = numeros[i][j];
-        fichas[ind-1]=1;
+        fichas[ind-1] = 1;
     }
     return verificaArregloIndices(fichas);
 }
 
-int Sudoku:: verificaArregloIndices(int arreglo[9]){
-    for(int i=0; i<9;i++){
-        if(arreglo[i]!=1){
+int Sudoku::verificaArregloIndices(int arreglo[9])
+{
+    for(int i=0 ; i<9 ; i++)
+    {
+        if(arreglo[i]!=1)
+        {
             return 0;
         }
     }
     return 1;
 }
 
-void Sudoku:: validaciones(){
-    int b=1;
-    if(!validarX()){
-       QMessageBox::critical(this,"Error","Existen numeros repetidos en las filas..!");
+void Sudoku::validaciones()
+{
+    int b = 1;
+    if(!validarX())
+    {
+       QMessageBox::critical(this,"ERROR","Existen Números Repetidos En Las Filas..!");
        b=0;
     }
-    if(!validarY()){
-       QMessageBox::critical(this,"Error","Existen numeros repetidos en las columnas..!");
+    if(!validarY())
+    {
+       QMessageBox::critical(this,"ERROR","Existen Números Repetidos En Las Columnas..!");
        b=0;
     }
-    if(!SubCuadros()){
-       QMessageBox::critical(this,"Error","Existen numeros repetidos en las subcuadriculas..!");
+    if(!SubCuadros())
+    {
+       QMessageBox::critical(this,"ERROR","Existen Números Repetidos En Las Sub-Cuadrículas..!");
        b=0;
     }
-    if(b==1){
-        QMessageBox::information(this,"Felicitaciones","Sudoku Correcto..!");
+    if(b==1)
+    {
+        QMessageBox::information(this,"FELICITACIONES","Sudoku Correcto..!");
     }
 }
 
 void Sudoku::on_pB_Verificar_clicked()
 {
-    if(ValidarEspaciosVacios()){
+    if(ValidarEspaciosVacios())
+    {
         Relacionar();
         validaciones();
-    }else{
-        QMessageBox::warning(this,"Error","Existen Cuadros vacíos, por favor complete los que hacen falta...");
-        qDebug() << "Llene los espacios faltantes";
     }
-
-
+    else
+    {
+        QMessageBox::warning(this,"ERROR","Existen Cuadros Vacíos, Por Favor Complete Los Que Hacen Falta...");
+    }
 }
