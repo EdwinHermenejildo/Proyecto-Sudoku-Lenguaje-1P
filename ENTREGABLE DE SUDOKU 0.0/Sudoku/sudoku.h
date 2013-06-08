@@ -31,6 +31,8 @@ public:
 private slots:
     void on_pB_Verificar_clicked();
 
+    void on_pB_Cancelar_clicked();
+
 private:
     void initGui();
     Ui::Sudoku *ui;

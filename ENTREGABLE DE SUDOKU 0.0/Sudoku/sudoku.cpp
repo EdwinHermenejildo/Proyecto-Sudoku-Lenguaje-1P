@@ -281,3 +281,22 @@ void Sudoku::on_pB_Verificar_clicked()
         QMessageBox::warning(this,"ERROR","Existen Cuadros Vacíos, Por Favor Complete Los Que Hacen Falta...");
     }
 }
+
+void Sudoku::on_pB_Cancelar_clicked()
+{
+    QMessageBox msgBox;
+     msgBox.setText("Seguro que Desea Salir");
+     //msgBox.setInformativeText("Deseas guardar los cambios?");
+     msgBox.setStandardButtons(QMessageBox::Close | QMessageBox::Cancel);
+     msgBox.setDefaultButton(QMessageBox::Close);
+     int elegido = msgBox.exec();
+     switch (elegido) {
+        case QMessageBox::Close:
+        {
+            close();
+            break;
+        }
+        case QMessageBox::Cancel:
+            break;
+      }
+}
