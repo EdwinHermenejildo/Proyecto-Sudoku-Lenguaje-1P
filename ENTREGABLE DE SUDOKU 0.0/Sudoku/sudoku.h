@@ -31,7 +31,9 @@ public:
 private slots:
     void on_pB_Verificar_clicked();
 
-    void on_pB_Cancelar_clicked();
+    void on_pB_Salir_clicked();
+
+    void on_pB_Solucion_clicked();
 
 private:
     void initGui();

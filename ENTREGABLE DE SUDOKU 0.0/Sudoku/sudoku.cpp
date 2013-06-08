@@ -6,6 +6,10 @@
 #include <QPushButton>
 #include <QMessageBox>
 #include <QDebug>
+#include <QFile>
+#include <QTextStream>
+#include <QString>
+#include <QChar>
 
 Sudoku::Sudoku(QWidget *parent) :
     QMainWindow(parent),
@@ -282,21 +286,26 @@ void Sudoku::on_pB_Verificar_clicked()
     }
 }
 
-void Sudoku::on_pB_Cancelar_clicked()
+void Sudoku::on_pB_Salir_clicked()
 {
-    QMessageBox msgBox;
-     msgBox.setText("Seguro que Desea Salir");
-     //msgBox.setInformativeText("Deseas guardar los cambios?");
-     msgBox.setStandardButtons(QMessageBox::Close | QMessageBox::Cancel);
-     msgBox.setDefaultButton(QMessageBox::Close);
-     int elegido = msgBox.exec();
-     switch (elegido) {
-        case QMessageBox::Close:
+    close();
+}
+
+void Sudoku::on_pB_Solucion_clicked()
+{
+    QFile file("../Sudoku/Soluciones.txt");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+       return; // O pones tu dialogo de error
+
+    QTextStream stream(&file);
+    QString myString = stream.readLine(); // Lee Todo Y Lo Guarda En Un QString
+    int k=0;
+    for(int i=0 ; i<9 ; i++)
+    {
+        for(int j=0 ; j<9 ; j++)
         {
-            close();
-            break;
+            cajas[i][j]->setText((QChar)myString[k]);
+            k++;
         }
-        case QMessageBox::Cancel:
-            break;
-      }
+    }
 }

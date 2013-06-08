@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>645</width>
-    <height>467</height>
+    <width>631</width>
+    <height>409</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -35,8 +35,8 @@
    <widget class="QPushButton" name="pB_Verificar">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>340</y>
+      <x>280</x>
+      <y>310</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -45,17 +45,30 @@
      <string>Verificar</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pB_Cancelar">
+   <widget class="QPushButton" name="pB_Salir">
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>340</y>
+      <x>490</x>
+      <y>310</y>
       <width>75</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>Cancelar</string>
+     <string>Salir</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pB_Solucion">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>310</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Solución</string>
     </property>
    </widget>
   </widget>
@@ -64,7 +77,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>645</width>
+     <width>631</width>
      <height>21</height>
     </rect>
    </property>
