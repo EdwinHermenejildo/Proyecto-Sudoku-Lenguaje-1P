@@ -10,6 +10,13 @@
 #include <QTextStream>
 #include <QString>
 #include <QChar>
+#include <QLabel>
+#include <QImage>
+#include <QPixmap>
+#include <QIcon>
+#include <QDialog>
+#include "vtnfichas.h"
+#include "ui_vtnfichas.h"
 
 Sudoku::Sudoku(QWidget *parent) :
     QMainWindow(parent),
@@ -37,8 +44,13 @@ void Sudoku::initGui()
     {
         for(int j=0 ; j<9 ; j++)
         {
-            cajas[i][j] = new QTextEdit();
-            ui->gLTablero->addWidget(cajas[i][j],i,j);
+            cajas[i][j] = new QPushButton(QIcon(":/img/48/vacia.png"),"");
+                        cajas[i][j]->setIconSize(QSize(48,48));
+                        cajas[i][j]->setFlat(true);
+                        connect(cajas[i][j],SIGNAL(clicked()),this,SLOT(AbrirDialogoFichas()));
+                       // QImage imgficha(":/img/48/vacia.png");
+                        //cajas[i][j]->setPixmap(QPixmap::fromImage(imgficha));
+                        ui->gLTablero->addWidget(cajas[i][j],i,j);
         }
     }
 }
@@ -49,7 +61,7 @@ void Sudoku::Relacionar()
     {
         for(int j=0 ; j<9 ; j++)
         {
-            numeros[i][j] = cajas[i][j]->toPlainText().toInt();
+            //numeros[i][j] = cajas[i][j]->toPlainText().toInt();
         }
     }
 }
@@ -60,10 +72,10 @@ int Sudoku::ValidarEspaciosVacios()
     {
         for(int j=0 ; j<9 ; j++)
         {
-            if(cajas[i][j]->toPlainText().isEmpty())
+           /* if(cajas[i][j]->toPlainText().isEmpty())
             {
                 return 0;
-            }
+            }*/
         }
     }
     return 1;
@@ -277,7 +289,7 @@ void Sudoku::on_pB_Verificar_clicked()
 {
     if(ValidarEspaciosVacios())
     {
-        Relacionar();
+       // Relacionar();
         validaciones();
     }
     else
@@ -308,4 +320,12 @@ void Sudoku::on_pB_Solucion_clicked()
             k++;
         }
     }
+}
+
+int Sudoku:: AbrirDialogoFichas(){
+    vtnEscogerFicha.setWindowModality(Qt::ApplicationModal);
+    vtnEscogerFicha.show();
+    numero = vtnEscogerFicha.getNumeroEscogido();
+    qDebug() << numero;
+   // return nro;
 }

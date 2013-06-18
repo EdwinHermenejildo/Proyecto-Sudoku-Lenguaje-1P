@@ -2,6 +2,7 @@
 #define SUDOKU_H
 
 #include <QMainWindow>
+#include "vtnfichas.h"
 
 namespace Ui {
 class Sudoku;
@@ -9,6 +10,9 @@ class Sudoku;
 
 
 class QTextEdit;
+class QLabel;
+class QImage;
+class QPushButton;
 
 class Sudoku : public QMainWindow
 {
@@ -35,12 +39,16 @@ private slots:
 
     void on_pB_Solucion_clicked();
 
-private:
-    void initGui();
-    Ui::Sudoku *ui;
-    QTextEdit *cajas[9][9];
-    int numeros[9][9];
-    int subnumeros[3][3];
+    int AbrirDialogoFichas();
+
+    private:
+        void initGui();
+        Ui::Sudoku *ui;
+        QPushButton *cajas[9][9];
+        int numeros[9][9];
+        int subnumeros[3][3];
+        vtnfichas vtnEscogerFicha;
+        int numero;
 };
 
 
