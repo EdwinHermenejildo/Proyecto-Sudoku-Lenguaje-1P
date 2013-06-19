@@ -74,7 +74,7 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>0</x>
       <y>500</y>
       <width>621</width>
       <height>101</height>
@@ -83,148 +83,268 @@
     <property name="title">
      <string>Panel de Fichas</string>
     </property>
-    <widget class="QLabel" name="f1">
+    <widget class="QPushButton" name="pBf3">
+     <property name="geometry">
+      <rect>
+       <x>152</x>
+       <y>30</y>
+       <width>60</width>
+       <height>56</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="img.qrc">
+       <normaloff>:/img/48/3.png</normaloff>:/img/48/3.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pBf4">
+     <property name="geometry">
+      <rect>
+       <x>218</x>
+       <y>30</y>
+       <width>60</width>
+       <height>56</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="img.qrc">
+       <normaloff>:/img/48/4.png</normaloff>:/img/48/4.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pBf7">
+     <property name="geometry">
+      <rect>
+       <x>416</x>
+       <y>30</y>
+       <width>60</width>
+       <height>56</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="img.qrc">
+       <normaloff>:/img/48/7.png</normaloff>:/img/48/7.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pBf5">
+     <property name="geometry">
+      <rect>
+       <x>284</x>
+       <y>30</y>
+       <width>60</width>
+       <height>56</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="img.qrc">
+       <normaloff>:/img/48/5.png</normaloff>:/img/48/5.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pBf6">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>30</y>
+       <width>60</width>
+       <height>56</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="img.qrc">
+       <normaloff>:/img/48/6.png</normaloff>:/img/48/6.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pBf2">
+     <property name="geometry">
+      <rect>
+       <x>86</x>
+       <y>30</y>
+       <width>60</width>
+       <height>56</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="img.qrc">
+       <normaloff>:/img/48/2.png</normaloff>:/img/48/2.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pBf8">
+     <property name="geometry">
+      <rect>
+       <x>482</x>
+       <y>30</y>
+       <width>60</width>
+       <height>56</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="img.qrc">
+       <normaloff>:/img/48/8.png</normaloff>:/img/48/8.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pBf9">
+     <property name="geometry">
+      <rect>
+       <x>548</x>
+       <y>30</y>
+       <width>60</width>
+       <height>56</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="img.qrc">
+       <normaloff>:/img/48/9.png</normaloff>:/img/48/9.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pBf1">
      <property name="geometry">
       <rect>
        <x>20</x>
        <y>30</y>
-       <width>51</width>
-       <height>51</height>
+       <width>60</width>
+       <height>56</height>
       </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>true</bool>
      </property>
      <property name="text">
       <string/>
      </property>
-     <property name="pixmap">
-      <pixmap>:/img/48/1.png</pixmap>
+     <property name="icon">
+      <iconset resource="img.qrc">
+       <normaloff>:/img/48/1.png</normaloff>:/img/48/1.png</iconset>
      </property>
-    </widget>
-    <widget class="QLabel" name="f2">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>30</y>
-       <width>51</width>
-       <height>51</height>
-      </rect>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
      </property>
-     <property name="text">
-      <string/>
+     <property name="checkable">
+      <bool>false</bool>
      </property>
-     <property name="pixmap">
-      <pixmap>:/img/48/2.png</pixmap>
-     </property>
-    </widget>
-    <widget class="QLabel" name="f4">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>30</y>
-       <width>51</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>:/img/48/4.png</pixmap>
-     </property>
-    </widget>
-    <widget class="QLabel" name="f3">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>30</y>
-       <width>51</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>:/img/48/3.png</pixmap>
-     </property>
-    </widget>
-    <widget class="QLabel" name="f8">
-     <property name="geometry">
-      <rect>
-       <x>440</x>
-       <y>30</y>
-       <width>51</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>:/img/48/8.png</pixmap>
-     </property>
-    </widget>
-    <widget class="QLabel" name="f5">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>30</y>
-       <width>51</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>:/img/48/5.png</pixmap>
-     </property>
-    </widget>
-    <widget class="QLabel" name="f6">
-     <property name="geometry">
-      <rect>
-       <x>320</x>
-       <y>30</y>
-       <width>51</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>:/img/48/6.png</pixmap>
-     </property>
-    </widget>
-    <widget class="QLabel" name="f7">
-     <property name="geometry">
-      <rect>
-       <x>380</x>
-       <y>30</y>
-       <width>51</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>:/img/48/7.png</pixmap>
-     </property>
-    </widget>
-    <widget class="QLabel" name="f9">
-     <property name="geometry">
-      <rect>
-       <x>500</x>
-       <y>30</y>
-       <width>51</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>:/img/48/9.png</pixmap>
+     <property name="flat">
+      <bool>true</bool>
      </property>
     </widget>
    </widget>
@@ -250,6 +370,8 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="img.qrc"/>
+ </resources>
  <connections/>
 </ui>

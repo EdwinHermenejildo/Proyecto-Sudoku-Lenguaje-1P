@@ -13,8 +13,14 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        sudoku.cpp
+        sudoku.cpp \
+    vtnfichas.cpp
 
-HEADERS  += sudoku.h
+HEADERS  += sudoku.h \
+    vtnfichas.h
 
-FORMS    += sudoku.ui
+FORMS    += sudoku.ui \
+    vtnfichas.ui
+
+RESOURCES += \
+    img.qrc

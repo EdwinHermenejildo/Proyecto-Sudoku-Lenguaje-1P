@@ -327,5 +327,5 @@ int Sudoku:: AbrirDialogoFichas(){
     vtnEscogerFicha.show();
     numero = vtnEscogerFicha.getNumeroEscogido();
     qDebug() << numero;
-   // return nro;
+    return 0;
 }
